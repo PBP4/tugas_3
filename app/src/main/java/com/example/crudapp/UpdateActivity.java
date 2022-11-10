@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class UpdateActivity extends AppCompatActivity implements View.OnClickListener {
     protected Cursor cursor;
     Database database;
-    EditText nama,univ;
+    EditText gedung,ruang, kapasitas;
     Button btn_submit;
 
     @Override
@@ -20,8 +20,9 @@ public class UpdateActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
         database = new Database(this);
-        nama = findViewById(R.id.et_nama);
-        univ = findViewById(R.id.et_univ);
+        gedung = findViewById(R.id.et_gedung);
+        ruang = findViewById(R.id.et_ruang);
+        kapasitas = findViewById(R.id.et_kapasitas);
         btn_submit = findViewById(R.id.btn_submit);
         btn_submit.setOnClickListener(this);
 

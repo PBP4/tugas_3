@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void RefreshList(){
         SQLiteDatabase db = database.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM mahasiswa;",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM inventory;",null);
         daftar = new String[cursor.getCount()];
         cursor.moveToFirst();
         for(int i=0; i < cursor.getCount(); i++){
@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 break;
                             case 2:
                                 SQLiteDatabase db = database.getWritableDatabase();
-                                db.execSQL("Delete FROM mahasiswa where nama = '" + selection + "'");
+                                //delete data
+                                db.execSQL("DELETE FROM inventory WHERE ruangan = '" + selection + "'");
                                 RefreshList();
                                 break;
                         }

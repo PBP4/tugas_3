@@ -9,21 +9,27 @@
     tools:context=".DetailActivity">
 
     <TextView
-        android:id="@+id/nama"
+        android:id="@+id/gedung"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:hint="Nama"
+        android:hint="Gedung"
         android:textColor="@color/black"
-        />
+        android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/univ"
+        android:id="@+id/ruang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:hint="Universitas"
+        android:hint="Ruang"
         android:textColor="@color/black"
-        />
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/kapasitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kapasitas"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
 </LinearLayout>

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class Database extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "Mahasiswa.db";
+    private static final String DATABASE_NAME = "inventory.db";
     private static final int DATABASE_VERSION = 1;
 
     public Database(Context context){
@@ -15,7 +15,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE mahasiswa(nama text,univ text);";
+        String sql = "CREATE TABLE inventory(gedung text,ruang text, kapasitas text);";
         Log.d("Data","onCreate : " + sql);
         db.execSQL(sql);
     }

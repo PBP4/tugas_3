@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class CreateActivity extends AppCompatActivity implements View.OnClickListener {
     protected Cursor cursor;
     Database database;
-    EditText nama,univ;
+    EditText gedung,ruang, kapasitas;
     Button btn_submit;
 
     @Override
@@ -22,8 +22,9 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_create);
 
         database = new Database(this);
-        nama = findViewById(R.id.et_nama);
-        univ = findViewById(R.id.et_univ);
+        gedung = findViewById(R.id.et_gedung);
+        ruang = findViewById(R.id.et_ruang);
+        kapasitas = findViewById(R.id.et_kapasitas);
         btn_submit = findViewById(R.id.btn_submit);
         btn_submit.setOnClickListener(this);
     }
@@ -33,8 +34,7 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         switch (view.getId()){
             case R.id.btn_submit:
                 SQLiteDatabase db = database.getWritableDatabase();
-                String query = "INSERT INTO mahasiswa VALUES('" +
-                        nama.getText().toString() + "','" + univ.getText().toString() + "');";
+                String query = "INSERT INTO inventory (gedung, ruang, kapasitas) VALUES ('"+gedung.getText().toString()+"','"+ruang.getText().toString()+"','"+kapasitas.getText().toString()+"')";
                 db.execSQL(query);
                 Toast.makeText(this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
                 MainActivity.ma.RefreshList();
