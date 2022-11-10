@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    String[] daftar;
+    String[] daftar, gedung, kapasitas, inventory;
     ListView listView;
     Menu menu;
     protected Cursor cursor;
@@ -48,14 +48,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void RefreshList(){
         SQLiteDatabase db = database.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM inventory;",null);
+        gedung = new String[cursor.getCount()];
         daftar = new String[cursor.getCount()];
+        kapasitas = new String[cursor.getCount()];
+        inventory = new String[cursor.getCount()];
         cursor.moveToFirst();
         for(int i=0; i < cursor.getCount(); i++){
             cursor.moveToPosition(i);
+            gedung[i] = cursor.getString(0).toString();
             daftar[i] = cursor.getString(1).toString();
+            kapasitas[i] = cursor.getString(2).toString();
+            inventory[i] = i+1 +". Kelas = "+daftar[i]+"\n\t\t\t\t\tGedung : "+gedung[i]+"\n\t\t\t\t\tKapasitas Ruangan : "+kapasitas[i]+"\n";
         }
         listView = findViewById(R.id.list_view);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
+        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, inventory));
         listView.setSelected(true);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
