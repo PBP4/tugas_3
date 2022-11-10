@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cursor.moveToFirst();
         for(int i=0; i < cursor.getCount(); i++){
             cursor.moveToPosition(i);
-            daftar[i] = cursor.getString(0).toString();
+            daftar[i] = cursor.getString(1).toString();
         }
         listView = findViewById(R.id.list_view);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             case 2:
                                 SQLiteDatabase db = database.getWritableDatabase();
                                 //delete data
-                                db.execSQL("DELETE FROM inventory WHERE ruangan = '" + selection + "'");
+                                db.execSQL("DELETE FROM inventory WHERE ruang = '" + selection + "'");
                                 RefreshList();
                                 break;
                         }

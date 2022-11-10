@@ -59,7 +59,7 @@
                 />
 
             <EditText
-                android:id="@+id/et_nama"
+                android:id="@+id/et_gedung"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -80,7 +80,7 @@
                 />
 
             <EditText
-                android:id="@+id/et_univ"
+                android:id="@+id/et_ruang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -114,7 +114,7 @@
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_univ"
+                android:layout_below="@id/et_kapasitas"
                 android:text="SUBMIT"
                 android:gravity="center"
                 android:background="@color/tema"

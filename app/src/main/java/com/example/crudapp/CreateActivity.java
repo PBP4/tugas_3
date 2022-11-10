@@ -2,6 +2,7 @@ package com.example.crudapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
     EditText gedung,ruang, kapasitas;
     Button btn_submit;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
