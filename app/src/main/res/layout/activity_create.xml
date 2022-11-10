@@ -1,79 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".CreateActivity">
 
-    <TextView
-        android:id="@+id/tv_formTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Form Pengisian"
-        android:textSize="36dp"
-        android:layout_marginBottom="16dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        />
-
-    <TextView
-        android:id="@+id/tv_gedung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_formTitle"
-        android:text="Gedung :"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/et_gedung"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_marginVertical="16dp"
-        android:layout_below="@id/tv_gedung"
-        />
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="#F4F6F8">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/tema"/>
 
-    <TextView
-        android:id="@+id/tv_ruang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_gedung"
-        android:text="Ruang :"
-        android:textColor="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bg"
+            android:layout_marginTop="-100dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
-    <EditText
-        android:id="@+id/et_ruang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_marginVertical="16dp"
-        android:layout_below="@+id/tv_ruang"
-        />
-    <TextView
-        android:id="@+id/tv_kapasitas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_ruang"
-        android:text="Kapasitas :"
-        android:textColor="@color/black" />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logoundip"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="30dp"/>
 
-    <EditText
-        android:id="@+id/et_kapasitas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_marginVertical="16dp"
-        android:layout_below="@+id/tv_kapasitas"
-        />
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/et_kapasitas"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="129dp"
-        android:text="SUBMIT" />
+            <TextView
+                android:id="@+id/tv_formTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Pendataan Kapasitas Kelas"
+                android:textSize="25sp"
+                android:layout_marginBottom="-15dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center" />
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/tv_nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gedung:"
+                android:layout_below="@id/tv_formTitle"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                />
+
+            <EditText
+                android:id="@+id/et_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginVertical="16dp"
+                android:layout_below="@id/tv_nama"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_univ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Kelas:"
+                android:layout_below="@+id/et_nama"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:id="@+id/et_univ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginVertical="16dp"
+                android:layout_below="@+id/tv_univ"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_kapasitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kapasitas :"
+                android:layout_below="@+id/et_nama"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:id="@+id/et_kapasitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginVertical="16dp"
+                android:layout_below="@+id/tv_univ"
+                android:textSize="18sp"
+                />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_univ"
+                android:text="SUBMIT"
+                android:gravity="center"
+                android:background="@color/tema"
+                android:textSize="18sp"
+                android:layout_marginTop="25dp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
