@@ -11,18 +11,17 @@
         android:id="@+id/tv_formTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Form Pengisian"
-        android:textSize="36dp"
+        android:text="Form Pengisian Ruangan"
+        android:textSize="32dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        />
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tv_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nama:"
+        android:text="Nama Ruang:"
         android:layout_below="@id/tv_formTitle"
         android:textColor="@color/black"
         />
@@ -40,7 +39,7 @@
         android:id="@+id/tv_univ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Universitas:"
+        android:text="Kapasitas:"
         android:layout_below="@+id/et_nama"
         android:textColor="@color/black"
         />
@@ -49,7 +48,7 @@
         android:id="@+id/et_univ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="number"
         android:layout_marginVertical="16dp"
         android:layout_below="@+id/tv_univ"
         />
