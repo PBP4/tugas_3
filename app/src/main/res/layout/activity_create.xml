@@ -37,11 +37,11 @@
                 android:layout_margin="30dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="27dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="-15dp"
                 android:gravity="center"
-                android:text="Menu Pendataan Kapasitas Ruang"
+                android:text="Form Pendataan Kapasitas Ruang"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -107,6 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Submit"
+                android:textStyle="bold"
                 android:layout_marginTop="20dp"
                 />
 
@@ -115,6 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kembali"
+                android:textStyle="bold"
                 />
 
         </LinearLayout>

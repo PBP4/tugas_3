@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void RefreshList(){
         SQLiteDatabase db = database.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM ruang;",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM ruang ORDER BY gedung ASC;",null);
         id = new String[cursor.getCount()];
         gedung = new String[cursor.getCount()];
         ruang = new String[cursor.getCount()];
