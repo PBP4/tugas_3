@@ -27,15 +27,15 @@ public class DetailActivity extends AppCompatActivity {
         ruang = findViewById(R.id.tv_ruang);
         kapasitas = findViewById(R.id.tv_kapasitas);
         SQLiteDatabase db = database.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM inventory WHERE ruang = '" + getIntent().getStringExtra("RUANGAN_KEY") + "'",null);
+        cursor = db.rawQuery("SELECT * FROM ruang WHERE id = '" + getIntent().getStringExtra("ID") + "'",null);
 
         // get data from database
         cursor.moveToFirst();
         if (cursor.getCount()>0){
             cursor.moveToPosition(0);
-            gedung.setText(cursor.getString(0).toString());
-            ruang.setText(cursor.getString(1).toString());
-            kapasitas.setText(cursor.getString(2).toString());
+            gedung.setText(cursor.getString(1).toString());
+            ruang.setText(cursor.getString(2).toString());
+            kapasitas.setText(cursor.getString(3).toString());
         }
 
         btn_back = findViewById(R.id.btn_back);

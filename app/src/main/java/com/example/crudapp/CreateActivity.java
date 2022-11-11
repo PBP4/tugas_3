@@ -37,6 +37,8 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_submit:
+                SQLiteDatabase db = database.getReadableDatabase();
+
                 // Ambil nilai yang diberikan pengguna pada seluruh EditText
                 String inputGedung = gedung.getText().toString();
                 String inputRuang = ruang.getText().toString();
@@ -59,10 +61,17 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
                     kapasitas.setError("Kapasitas tidak boleh kosong");
                 }
 
+                // Gedung dan ruang tidak boleh sama
+                cursor = db.rawQuery("SELECT * FROM ruang WHERE gedung = '" + inputGedung + "' AND ruang = '" + inputRuang + "'",null);
+                cursor.moveToFirst();
+                if (cursor.getCount()>0){
+                    isEmptyFields = true;
+                    Toast.makeText(this, "Gedung dan Ruang sudah ada", Toast.LENGTH_SHORT).show();
+                }
+
                 if (!isEmptyFields) {
                     // Jika tidak ada field yang kosong, maka masukkan data ke database
-                    SQLiteDatabase db = database.getWritableDatabase();
-                    db.execSQL("INSERT INTO inventory (gedung, ruang, kapasitas) VALUES ('" + inputGedung + "','" + inputRuang + "','" + inputKapasitas + "')");
+                    db.execSQL("INSERT INTO ruang (gedung, ruang, kapasitas) VALUES ('" + inputGedung + "','" + inputRuang + "','" + inputKapasitas + "')");
                     Toast.makeText(this, "Data berhasil ditambahkan", Toast.LENGTH_SHORT).show();
                     MainActivity.ma.RefreshList();
                     finish();

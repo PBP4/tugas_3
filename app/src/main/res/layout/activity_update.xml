@@ -1,79 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".UpdateActivity">
 
-    <TextView
-        android:id="@+id/tv_formTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Form Update"
-        android:textSize="36dp"
-        android:layout_marginBottom="16dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        />
-
-    <TextView
-        android:id="@+id/tv_gedung"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_formTitle"
-        android:text="Gedung"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/et_gedung"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_marginVertical="16dp"
-        android:layout_below="@id/tv_gedung"
-        />
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="#F4F6F8">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/tema"/>
 
-    <TextView
-        android:id="@+id/tv_ruang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_gedung"
-        android:text="Ruang :"
-        android:textColor="@color/black" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/bg"
+            android:layout_marginTop="-100dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
-    <EditText
-        android:id="@+id/et_ruang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_marginVertical="16dp"
-        android:layout_below="@+id/tv_ruang"
-        />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logoundip"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="30dp"/>
 
-    <TextView
-        android:id="@+id/tv_kapasitas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_ruang"
-        android:text="Kapasitas"
-        android:textColor="@color/black" />
+            <TextView
+                android:layout_width="315dp"
+                android:layout_height="27dp"
+                android:layout_marginBottom="-15dp"
+                android:gravity="center"
+                android:text="Update Data"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/et_kapasitas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_kapasitas"
-        android:layout_marginVertical="16dp"
-        android:inputType="text" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gedung:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="-20dp"
+                />
 
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/et_kapasitas"
-        android:text="SUBMIT"
-        />
+            <EditText
+                android:id="@+id/et_gedung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginVertical="16dp"
+                android:textSize="18sp"
+                />
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ruang:"
+                android:layout_below="@+id/et_nama"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="-20dp"
+                />
+
+            <EditText
+                android:id="@+id/et_ruang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginVertical="16dp"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kapasitas :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="-20dp"
+                />
+
+            <EditText
+                android:id="@+id/et_kapasitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:layout_marginVertical="16dp"
+                android:textSize="18sp"
+                />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_marginTop="20dp"
+                />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kembali"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

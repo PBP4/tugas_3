@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    String[] daftar, gedung, kapasitas, inventory;
+    String[] id, ruang, gedung, kapasitas, getAll;
     ListView listView;
     Menu menu;
     protected Cursor cursor;
@@ -47,27 +47,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void RefreshList(){
         SQLiteDatabase db = database.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM inventory;",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM ruang;",null);
+        id = new String[cursor.getCount()];
         gedung = new String[cursor.getCount()];
-        daftar = new String[cursor.getCount()];
+        ruang = new String[cursor.getCount()];
         kapasitas = new String[cursor.getCount()];
-        inventory = new String[cursor.getCount()];
+        getAll = new String[cursor.getCount()];
         cursor.moveToFirst();
         for(int i=0; i < cursor.getCount(); i++){
             cursor.moveToPosition(i);
-            gedung[i] = cursor.getString(0).toString();
-            daftar[i] = cursor.getString(1).toString();
-            kapasitas[i] = cursor.getString(2).toString();
-            inventory[i] = i+1 + ". " + gedung[i] + daftar[i];
+            id[i] = cursor.getString(0).toString();
+            gedung[i] = cursor.getString(1).toString();
+            ruang[i] = cursor.getString(2).toString();
+            kapasitas[i] = cursor.getString(3).toString();
+            getAll[i] = i+1 + ". " + gedung[i] + ruang[i];
         }
         listView = findViewById(R.id.list_view);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, inventory));
+        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, getAll));
         listView.setSelected(true);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                final String selection = daftar[i];
+                final String selection = id[i];
                 final CharSequence[] dialogitem = {"View Data", "Update Data", "Delete Data"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Menu");
@@ -77,18 +79,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         switch (item) {
                             case 0:
                                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
-                                intent.putExtra("RUANGAN_KEY", selection);
+                                intent.putExtra("ID", selection);
                                 startActivity(intent);
                                 break;
                             case 1:
                                 Intent intent2 = new Intent(getApplicationContext(), UpdateActivity.class);
-                                intent2.putExtra("RUANGAN_KEY", selection);
+                                intent2.putExtra("ID", selection);
                                 startActivity(intent2);
                                 break;
                             case 2:
                                 SQLiteDatabase db = database.getWritableDatabase();
                                 //delete data
-                                db.execSQL("DELETE FROM inventory WHERE ruang = '" + selection + "'");
+                                db.execSQL("DELETE FROM ruang WHERE id = '" + selection + "'");
                                 RefreshList();
                                 break;
                         }
