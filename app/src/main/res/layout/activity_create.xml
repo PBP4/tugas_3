@@ -37,25 +37,23 @@
                 android:layout_margin="30dp"/>
 
             <TextView
-                android:id="@+id/tv_formTitle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Menu Pendataan Kapasitas Kelas"
-                android:textSize="25sp"
+                android:layout_height="27dp"
                 android:layout_marginBottom="-15dp"
-                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Menu Pendataan Kapasitas Ruang"
                 android:textColor="@color/black"
-                android:gravity="center" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gedung:"
-                android:layout_below="@id/tv_formTitle"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="-20dp"
                 />
 
             <EditText
@@ -64,19 +62,17 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:layout_marginVertical="16dp"
-                android:layout_below="@id/tv_nama"
                 android:textSize="18sp"
                 />
 
             <TextView
-                android:id="@+id/tv_univ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Kelas:"
+                android:text="Ruang:"
                 android:layout_below="@+id/et_nama"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-20dp"
                 />
 
             <EditText
@@ -85,19 +81,16 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:layout_marginVertical="16dp"
-                android:layout_below="@+id/tv_univ"
                 android:textSize="18sp"
                 />
 
             <TextView
-                android:id="@+id/tv_kapasitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kapasitas :"
-                android:layout_below="@+id/et_nama"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginTop="10dp"
+                android:layout_marginBottom="-20dp"
                 />
 
             <EditText
@@ -106,7 +99,6 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:layout_marginVertical="16dp"
-                android:layout_below="@+id/tv_univ"
                 android:textSize="18sp"
                 />
 
@@ -114,12 +106,15 @@
                 android:id="@+id/btn_submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_kapasitas"
-                android:text="SUBMIT"
-                android:gravity="center"
-                android:background="@color/tema"
-                android:textSize="18sp"
-                android:layout_marginTop="25dp"
+                android:text="Submit"
+                android:layout_marginTop="20dp"
+                />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kembali"
                 />
 
         </LinearLayout>

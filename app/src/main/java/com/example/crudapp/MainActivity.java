@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             gedung[i] = cursor.getString(0).toString();
             daftar[i] = cursor.getString(1).toString();
             kapasitas[i] = cursor.getString(2).toString();
-            inventory[i] = i+1 +". Kelas = "+daftar[i]+"\n\t\t\t\t\tGedung : "+gedung[i]+"\n\t\t\t\t\tKapasitas Ruangan : "+kapasitas[i]+"\n";
+            inventory[i] = i+1 + ". " + gedung[i] + daftar[i];
         }
         listView = findViewById(R.id.list_view);
         listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, inventory));
